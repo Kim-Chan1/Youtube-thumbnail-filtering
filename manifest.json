@@ -1,0 +1,18 @@
+
+{
+    "manifest_version" : 3,
+    "name" : "유튜브 시각적 혐오 썸네일 탐지",
+    "version" : "1.0",
+    "description" : "Classify Disgusting Youtube Thumbnail",
+    "permissions" : ["activeTab", "declarativeContent", "storage"],
+    "content_scripts" : [
+        {
+            "matches" : ["https://www.youtube.com/*"],
+            "js" : ["content.js"],
+            "run_at" : "document_idle"
+        }
+    ],
+    "background" : {
+        "service_worker": "background.js"
+    }
+}
